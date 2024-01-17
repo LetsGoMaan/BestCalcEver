@@ -3,11 +3,19 @@ let btn = document.querySelectorAll('span');
 let value = document.getElementById('value');
 let toggleBtn = document.querySelector('.toggleBtn');
 let body = document.querySelector('body');
+
+let isResultShown = false; // Флаг для отслеживания, был ли показан результат
+
 for (let i = 0; i < btn.length; i++) {
   btn[i].addEventListener('click', function () {
     if (this.innerHTML === '=') {
       value.innerHTML = getResult(value.innerHTML);
+      isResultShown = true;
     } else {
+      if (isResultShown) {
+        value.innerHTML = ''
+        isResultShown = false
+      }
       if (this.innerHTML === 'Clear') {
         value.innerHTML = '';
       } else if (this.innerHTML === '%') {
