@@ -12,19 +12,18 @@ module.exports = {
       template: './src/index.html', // Путь к шаблону HTML
       filename: 'index.html', // Имя выходного файла HTML
     }),
-
   ],
   optimization: {
     splitChunks: {
-      chunks: 'all'
-    }
+      chunks: 'all',
+    },
   },
   module: {
     rules: [
       {
         test: /\.css$/, // применять правила только к CSS-файлам
-        use: ['style-loader', 'css-loader'] // загрузчики для обработки CSS
-      }
-    ]
-  }
+        use: ['style-loader', 'css-loader'], // загрузчики для обработки CSS
+      },
+    ],
+  },
 };
