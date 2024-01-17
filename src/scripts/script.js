@@ -4,18 +4,18 @@ let value = document.getElementById('value');
 let toggleBtn = document.querySelector('.toggleBtn');
 let body = document.querySelector('body');
 
-let isResultShown = false; // Флаг для отслеживания, был ли показан результат
+// let isResultShown = false; // Флаг для отслеживания, был ли показан результат(флаг не помогает, приводит к невозможности работы с цепочкой выражений с результатом.)
 
 for (let i = 0; i < btn.length; i++) {
   btn[i].addEventListener('click', function () {
     if (this.innerHTML === '=') {
       value.innerHTML = getResult(value.innerHTML);
-      isResultShown = true;
+      // isResultShown = true;
     } else {
-      if (isResultShown) {
-        value.innerHTML = ''
-        isResultShown = false
-      }
+      // if (isResultShown) {
+      //   value.innerHTML = ''
+      //   // isResultShown = false
+      // }
       if (this.innerHTML === 'Clear') {
         value.innerHTML = '';
       } else if (this.innerHTML === '%') {
